@@ -1,32 +1,243 @@
-# Glossy — Initial Design System
+# Glossy — Design System v1.0
 
-> This document contains proposals and placeholders. Only values explicitly approved by the design owner should become production tokens.
+> Рабочая спецификация для визуального направления **Light Minimal** сайта автосервиса «Космоавто112». Все значения ниже являются предложенными runtime-токенами до проверки фирменной айдентики, контрастности, шрифтовой лицензии и согласования с владельцем продукта.
 
-## Token Status
+## Статусы решений
 
-- **Proposed:** exploration values used for discussion.
-- **Approved:** reviewed values ready for implementation.
-- **TBD:** awaiting research, content, or stakeholder decision.
+- **Proposed** — рабочее предложение для прототипирования и реализации после утверждения.
+- **Approved** — значение согласовано владельцем продукта и готово стать production-токеном.
+- **TBD** — требует отдельного решения, исследования или проверки.
 
-## Foundations
+В текущей версии числовые токены имеют статус **Proposed**. Акцентный цвет особенно предварительный: его необходимо сверить с фирменной айдентикой «Космоавто112» до публичного запуска.
 
-- **Color tokens:** Proposed semantic groups: background, surface, elevated surface, text, muted text, border, brand accent, focus, success, warning, and error. Exact colors and contrast checks: TBD.
-- **Typography:** Proposed roles: display, heading, body, label, caption, and numeric/data text. Font families, weights, sizes, line heights, and licenses: TBD.
-- **Spacing:** Use a consistent scale based on approved design measurements. Base unit and scale: TBD.
-- **Breakpoints:** Define behavior around content needs rather than device names. Exact breakpoints: TBD.
-- **Grid and containers:** Use a responsive column grid with a readable maximum content width. Column count, gutters, and max widths: TBD.
-- **Border radius:** Establish a restrained radius scale for controls, cards, and media. Values: TBD.
-- **Shadows:** Prefer subtle elevation with accessible contrast; exact recipes: TBD.
+## Принципы
 
-## Components
+- Light Minimal: светлая основа, ясная иерархия, умеренное количество декоративных элементов.
+- Контраст и доступность важнее декоративной выразительности; смысл не должен передаваться только цветом.
+- Семантические токены используются вместо прямых HEX-значений в компонентах.
+- SCSS/BEM отвечает за кастомные страницы, секции и визуальную идентичность; MUI используется для выбранных переиспользуемых примитивов и доступных интеракций.
+- Не создавать визуально одинаковые стили в SCSS и MUI параллельно без документированной границы ответственности.
 
-- **Buttons:** Primary, secondary, text, loading, disabled, focus-visible, and destructive only when necessary. Labels must describe the action.
-- **Form controls:** Labels, hint text, required state, validation message, focus state, disabled state, and autocomplete behavior must be defined.
-- **Cards:** Use consistent media ratio, content padding, heading hierarchy, and action placement. Avoid cards when they add no useful grouping.
-- **Navigation:** Define desktop, mobile-open, mobile-closed, sticky, focus, and current-location states.
-- **Icons:** Use one consistent icon source with accessible labels; decorative icons are hidden from assistive technology.
-- **Motion:** Define duration and easing tokens only after concept approval; provide reduced-motion alternatives.
+## Цветовая система
 
-## Accessibility
+Имена приведены в терминах CSS Custom Properties. HEX — исходные значения токенов до возможной адаптации под фирменную палитру.
 
-Use semantic HTML, visible focus indicators, sufficient contrast, keyboard support, accessible names, logical focus order, scalable text, and tested reduced-motion behavior. Do not communicate meaning by color alone.
+### Бренд и акцент
+
+| Токен | HEX | Назначение | Статус |
+|---|---|---|---|
+| `--color-primary` | `#111827` | Основной тёмный цвет бренда, заголовки, ключевые действия на светлом фоне | Proposed |
+| `--color-primary-hover` | `#1F2937` | Hover/focus-усиление для primary-кнопок и ссылок | Proposed |
+| `--color-secondary` | `#475569` | Вторичные действия, вспомогательные элементы и нейтральные акценты | Proposed |
+| `--color-accent` | `#F97316` | Акцент CTA, выделения и ключевые интерактивные состояния; **предварительный до проверки фирменной айдентики** | Proposed / TBD |
+| `--color-accent-hover` | `#EA580C` | Hover/active для акцентного цвета | Proposed / TBD |
+| `--color-on-primary` | `#FFFFFF` | Текст и иконки на primary-фоне | Proposed |
+| `--color-on-accent` | `#FFFFFF` | Текст и иконки на accent-фоне; подтвердить контраст после утверждения акцента | Proposed / TBD |
+
+### Фоны, поверхности и текст
+
+| Токен | HEX | Назначение | Статус |
+|---|---|---|---|
+| `--color-background` | `#F8FAFC` | Основной фон страниц | Proposed |
+| `--color-background-muted` | `#F1F5F9` | Чередующиеся секции и мягкое отделение блоков | Proposed |
+| `--color-surface` | `#FFFFFF` | Карточки, формы, панели и контентные поверхности | Proposed |
+| `--color-surface-raised` | `#FFFFFF` | Поверхности с elevation/shadow | Proposed |
+| `--color-surface-inverse` | `#111827` | Инверсные секции и тёмный footer | Proposed |
+| `--color-text-primary` | `#0F172A` | Основной текст и заголовки | Proposed |
+| `--color-text-secondary` | `#475569` | Вторичный текст, описания, hint и метаданные | Proposed |
+| `--color-text-muted` | `#64748B` | Caption и неключевые пояснения; не использовать для обязательного содержимого без проверки контраста | Proposed |
+| `--color-text-inverse` | `#F8FAFC` | Текст на инверсных поверхностях | Proposed |
+
+### Границы и семантические состояния
+
+| Токен | HEX | Назначение | Статус |
+|---|---|---|---|
+| `--color-border` | `#E2E8F0` | Основные границы полей, карточек и разделителей | Proposed |
+| `--color-border-strong` | `#CBD5E1` | Видимые границы и hover-состояния | Proposed |
+| `--color-focus` | `#2563EB` | Видимый focus-visible индикатор; не заменяет семантическое сообщение | Proposed |
+| `--color-success` | `#15803D` | Успех, подтверждение, завершённое действие | Proposed |
+| `--color-success-surface` | `#F0FDF4` | Фон success-сообщения | Proposed |
+| `--color-warning` | `#B45309` | Предупреждение и необходимость внимания | Proposed |
+| `--color-warning-surface` | `#FFFBEB` | Фон warning-сообщения | Proposed |
+| `--color-error` | `#B91C1C` | Ошибка, невалидное поле, destructive-действие | Proposed |
+| `--color-error-surface` | `#FEF2F2` | Фон error-сообщения | Proposed |
+| `--color-info` | `#0369A1` | Нейтральная информационная подсказка | Proposed |
+| `--color-info-surface` | `#F0F9FF` | Фон info-сообщения | Proposed |
+
+Финальные сочетания foreground/background необходимо проверить инструментом контрастности для обычного текста, крупного текста, границ и focus-индикатора. Для состояний использовать текст или иконку вместе с цветом.
+
+## Типографика
+
+### Семейство и начертания
+
+- Основное семейство: **Manrope**, sans-serif — предварительный выбор, требуется проверить лицензирование, кириллицу, загрузку и fallback.
+- `300` Light — крупные display-акценты, только при достаточном размере и контрасте.
+- `400` Regular — body, подписи и обычный текст.
+- `500` Medium — labels, навигация, вторичные кнопки.
+- `600` SemiBold — заголовки, primary-кнопки, важные значения.
+- `700` Bold — H1/H2 и редкие сильные акценты.
+
+### Шкала
+
+| Токен | Размер | Line-height | Применение |
+|---|---:|---:|---|
+| `--font-size-xs` | 12px | 16px / 1.333 | caption, legal, вспомогательная информация |
+| `--font-size-sm` | 14px | 20px / 1.429 | label, small body, метаданные |
+| `--font-size-md` | 16px | 24px / 1.5 | основной body |
+| `--font-size-lg` | 18px | 28px / 1.556 | lead, крупный body |
+| `--font-size-xl` | 20px | 28px / 1.4 | H6, вводные блоки |
+| `--font-size-2xl` | 24px | 32px / 1.333 | H5 |
+| `--font-size-3xl` | 30px | 36px / 1.2 | H4 |
+| `--font-size-4xl` | 36px | 44px / 1.222 | H3 |
+| `--font-size-5xl` | 48px | 56px / 1.167 | H2 |
+| `--font-size-6xl` | 60px | 68px / 1.133 | H1/display на desktop |
+
+Иерархия: H1 — один на страницу; H2 — основные секции; H3 — подсекции; H4–H6 — локальная вложенность без пропуска уровней. Body использует `16px/24px`, caption — `12px/16px`; labels — `14px/20px`, обычно weight 500.
+
+На мобильных: H1 `36px/44px`, H2 `32px/40px`, H3 `28px/36px`, H4 `24px/32px`, H5 `20px/28px`, H6 `18px/28px`. Body сохраняет `16px/24px`; caption не уменьшать ниже `12px`. Точные размеры остаются Proposed и требуют проверки на реальном контенте.
+
+## Spacing
+
+Базовая шкала — шаг **4px**. Использовать токены, а не произвольные значения.
+
+| Токен | Значение |
+|---|---:|
+| `--space-0` | 0px |
+| `--space-1` | 4px |
+| `--space-2` | 8px |
+| `--space-3` | 12px |
+| `--space-4` | 16px |
+| `--space-5` | 20px |
+| `--space-6` | 24px |
+| `--space-8` | 32px |
+| `--space-10` | 40px |
+| `--space-12` | 48px |
+| `--space-16` | 64px |
+| `--space-20` | 80px |
+| `--space-24` | 96px |
+| `--space-32` | 128px |
+
+Внутренние отступы задают расстояние между границей поверхности и её содержимым; внешние — расстояние между соседними блоками. Сначала использовать меньший подходящий токен, сохранять вертикальный ритм и не компенсировать ошибочную структуру случайными margin. У интерактивных элементов поддерживать удобную область нажатия, ориентируясь минимум на 44px по меньшей стороне.
+
+## Borders и radius
+
+- `--border-width-thin: 1px` — стандартные границы, разделители и поля.
+- `--border-width-medium: 2px` — focus-visible, усиленная граница и selected state.
+- `--border-style-default: solid`; dashed допустим только для dropzone/placeholder-паттернов.
+- Цвет по умолчанию `--color-border`, усиленный — `--color-border-strong`; не использовать accent для обычных разделителей.
+
+| Токен | Значение | Применение |
+|---|---:|---|
+| `--radius-xs` | 4px | малые поля, badges |
+| `--radius-sm` | 8px | inputs, buttons, небольшие карточки |
+| `--radius-md` | 12px | стандартные cards и panels |
+| `--radius-lg` | 16px | крупные cards, hero-поверхности |
+| `--radius-xl` | 24px | выделенные промо-поверхности |
+| `--radius-full` | 9999px | pills, avatars, круглые controls |
+
+## Shadows
+
+| Токен | Рецепт | Назначение |
+|---|---|---|
+| `--shadow-sm` | `0 1px 2px rgb(15 23 42 / 0.06)` | лёгкое отделение card/control от фона |
+| `--shadow-md` | `0 8px 24px rgb(15 23 42 / 0.10)` | raised cards, dropdown и sticky elements |
+| `--shadow-lg` | `0 20px 48px rgb(15 23 42 / 0.16)` | modal, dialog и крупные overlay |
+
+Тени не должны быть единственным способом обозначить границу или focus. На плоских секциях shadow не применять без функциональной причины.
+
+## Layout
+
+- Максимальная ширина контента: `--layout-max-width: 1200px` (Proposed).
+- Внешние поля контейнера: `16px` на mobile, `24px` на tablet, `32px` на desktop.
+- Сетка: 12 колонок на desktop, 8 на tablet, 4 на mobile.
+- Desktop gutters: `24px`; tablet: `20px`; mobile: `16px`.
+- Колонки и gutters задаются через CSS Grid; не фиксировать ширину контента внутри компонентов без причины.
+- Основной контейнер центрируется и не растягивает текстовые строки до неудобной длины; длинный текст ограничивать локальной шириной, а не отдельными случайными контейнерами.
+
+### Брейкпоинты
+
+| Токен | Ширина | Предпочтительное поведение |
+|---|---:|---|
+| `--breakpoint-sm` | 640px | переход к tablet-отступам и 8 колонкам |
+| `--breakpoint-md` | 768px | tablet navigation/layout |
+| `--breakpoint-lg` | 1024px | desktop navigation и 12 колонок |
+| `--breakpoint-xl` | 1280px | max-width и расширенные композиции |
+
+Использовать mobile-first media queries и проверять поведение по ширине контента, а не по названию устройства. Значения Proposed и могут измениться после появления реальных страниц.
+
+## Motion
+
+| Токен | Значение | Назначение |
+|---|---:|---|
+| `--duration-fast` | 120ms | hover, color, opacity и небольшие feedback-изменения |
+| `--duration-normal` | 200ms | раскрытие, transform и стандартные переходы |
+| `--duration-slow` | 320ms | modal, drawer и заметные layout transitions |
+| `--easing-standard` | `cubic-bezier(0.2, 0, 0, 1)` | большинство переходов |
+| `--easing-emphasized` | `cubic-bezier(0.2, 0.8, 0.2, 1)` | появление и раскрытие |
+
+Hover меняет цвет, границу или elevation без скачка layout. Focus-visible всегда заметен через `--color-focus` и не зависит только от hover. Scroll reveal — короткое появление с opacity/translate, только для контентной поддержки, без блокировки чтения и навигации. При `prefers-reduced-motion: reduce` отключать scroll reveal и transform-анимации, сводить переходы к мгновенным или не длиннее `1ms`; функциональные состояния должны оставаться доступными.
+
+## Z-index
+
+Использовать централизованные токены и не создавать локальные значения без причины:
+
+| Токен | Значение | Слой |
+|---|---:|---|
+| `--z-base` | 0 | обычный контент |
+| `--z-raised` | 10 | raised cards, локальные элементы |
+| `--z-sticky` | 100 | sticky header/controls |
+| `--z-dropdown` | 200 | menu, popover, autocomplete |
+| `--z-overlay` | 300 | scrim/backdrop |
+| `--z-modal` | 400 | dialog, drawer |
+| `--z-toast` | 500 | toast и глобальные уведомления |
+| `--z-critical` | 600 | редкие системные блокирующие состояния |
+
+## Правила реализации токенов
+
+### Единый источник значений
+
+- CSS Custom Properties — единый runtime-источник дизайн-токенов, например `--color-surface`, `--space-4`, `--radius-md`.
+- SCSS variables разрешены только для compile-time значений: breakpoint maps, имена путей, флаги и технические настройки, которые нельзя получить runtime.
+- Не дублировать HEX, spacing, radius, shadow и durations в компонентах, CSS-модулях или MUI overrides.
+- SCSS mixins/functions — общие инструменты для container/grid, focus-visible, typography и responsive rules; они не должны содержать второй набор цветовых или размерных решений.
+
+### Планируемая структура SCSS
+
+Структура предусмотрена для будущей реализации, но **файлы в рамках этой задачи не создаются**, поскольку приложение ещё не инициализировано:
+
+```text
+src/styles/
+├── abstracts/
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   └── _functions.scss
+├── base/
+│   ├── _reset.scss
+│   ├── _typography.scss
+│   └── _global.scss
+├── themes/
+│   └── _tokens.scss
+└── main.scss
+```
+
+`themes/_tokens.scss` публикует CSS Custom Properties; `abstracts/` содержит compile-time инструменты; `base/` применяет reset, типографику и глобальные правила; `main.scss` задаёт порядок подключения.
+
+### MUI theme
+
+MUI theme должен ссылаться на общие CSS Custom Properties или на их синхронизированный слой, а не повторять значения вручную. Цветовые роли, typography, shape, spacing и transitions темы должны соответствовать этому документу. Кастомные страницы и BEM-классы остаются в SCSS; overrides MUI документируются в теме.
+
+## Accessibility и проверка
+
+- Использовать семантический HTML, видимый focus-visible, keyboard support, логичный порядок фокуса и доступные имена.
+- Проверить контраст текста, интерактивных элементов, границ и focus-индикаторов после утверждения палитры.
+- Текст должен масштабироваться; не обрезать обязательный контент фиксированной высотой.
+- Проверить hover, focus, active, disabled, loading, success, warning и error states без зависимости от одного цвета.
+- Отдельно проверить `prefers-reduced-motion: reduce`.
+
+## Решения, ожидающие согласования
+
+1. Акцент `#F97316` и производный hover — предварительные до сверки с фирменной айдентикой «Космоавто112».
+2. Manrope — предварительный выбор; требуется подтвердить кириллицу, лицензию, способ доставки шрифта и fallback.
+3. Все HEX, размеры типографики, spacing, radius, shadows, layout и motion — Proposed до проверки на реальных макетах и контенте.
+4. Контрастность всех пар и финальные disabled-состояния — TBD до утверждения цветовой палитры.
+5. Брейкпоинты и сетка — Proposed до проверки ключевых страниц, навигации и форм.
