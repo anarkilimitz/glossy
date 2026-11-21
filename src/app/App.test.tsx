@@ -4,9 +4,9 @@ import { describe, expect, it } from 'vitest';
 import { LandingPage } from '../pages/LandingPage';
 
 describe('LandingPage', () => {
-  it('renders the project foundation message', () => {
+  it('renders the landing page hero', () => {
     render(<MemoryRouter><LandingPage /></MemoryRouter>);
-    expect(screen.getByRole('heading', { name: 'Glossy' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: /Ремонт и аренда автомобилей/ })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Космоавто112, на главную/ })).toBeInTheDocument();
   });
 });
