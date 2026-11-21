@@ -2,6 +2,7 @@ import { PageShell } from '../widgets/page-shell/PageShell';
 import { Hero } from '../widgets/hero/Hero';
 import { Services } from '../widgets/services/Services';
 import { About } from '../widgets/about/About';
+import { Portfolio } from '../widgets/portfolio/Portfolio';
 
 export function LandingPage() {
   return (
@@ -9,6 +10,7 @@ export function LandingPage() {
       <Hero />
       <Services />
       <About />
+      <Portfolio />
     </PageShell>
   );
 }
