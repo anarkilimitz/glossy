@@ -1,24 +1,39 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
-export type ButtonProps = {
+type ButtonBaseProps = {
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
+};
+
+type ButtonElementProps = ButtonBaseProps & {
+  as?: 'button';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button({
-  children,
-  variant = 'primary',
-  size = 'medium',
-  className,
-  type = 'button',
-  ...props
-}: ButtonProps) {
+type AnchorButtonProps = ButtonBaseProps & {
+  as: 'a';
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export type ButtonProps = ButtonElementProps | AnchorButtonProps;
+
+function omitButtonProps(props: ButtonProps) {
+  const elementProps = { ...props } as Record<string, unknown>;
+  ['as', 'children', 'variant', 'size', 'className'].forEach((key) => delete elementProps[key]);
+  return elementProps;
+}
+
+export function Button(props: ButtonProps) {
+  const { children, variant = 'primary', size = 'medium', className } = props;
   const classes = ['button', `button--${variant}`, `button--${size}`, className].filter(Boolean).join(' ');
 
-  return <button className={classes} type={type} {...props}>{children}</button>;
+  if (props.as === 'a') {
+    return <a className={classes} {...omitButtonProps(props) as AnchorHTMLAttributes<HTMLAnchorElement>}>{children}</a>;
+  }
+
+  const buttonProps = omitButtonProps(props) as ButtonHTMLAttributes<HTMLButtonElement>;
+  return <button className={classes} type={buttonProps.type ?? 'button'} {...buttonProps}>{children}</button>;
 }
