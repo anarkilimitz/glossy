@@ -1,0 +1,5 @@
+@use '../themes/tokens' as tokens;
+
+// CSS custom properties cannot be used in media queries. This compile-time map
+// mirrors the published breakpoint tokens and is the only Sass media-query API.
+$breakpoints: tokens.$breakpoints;

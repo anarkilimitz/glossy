@@ -2,7 +2,7 @@
 
 ## Status
 
-Initial direction only. Exact colors, fonts, imagery, and tokens are not final until the visual concept is approved.
+Light Minimal v1 is the approved visual direction. Exact colors, sizes, breakpoints, imagery, and other design-token values remain preliminary until finalized.
 
 ## Visual Concept
 
@@ -14,7 +14,7 @@ Confident, refined, capable, trustworthy, and detail-oriented. The tone should a
 
 ## Audience
 
-Vehicle owners and prospective customers evaluating maintenance, repair, painting, bodywork, or rental services. Audience demographics, location, and purchasing context are TBD.
+Vehicle owners and prospective customers evaluating body repair (including painting), mechanical repair, or rental services. Audience demographics, location, and purchasing context are TBD.
 
 ## Research Needed
 
@@ -29,7 +29,7 @@ References must be documented before borrowing recognizable patterns; no competi
 ## Direction
 
 - **Photography:** Real, high-resolution, permissioned vehicle and workshop imagery; emphasize material, craft, process, and controlled lighting.
-- **Typography:** Strong display hierarchy paired with highly legible body text; final families and licenses TBD.
+- **Typography:** Strong display hierarchy paired with highly legible body text; Manrope is the preliminary choice, with final source, license, and fallback TBD.
 - **Color:** Restrained premium palette with a clear surface, text, accent, and status system; exact values TBD.
 - **Layout:** Intentional whitespace, clear rhythm, asymmetry only when it improves hierarchy, and a consistent content container.
 - **Animation:** Subtle entrance, hover, and transition motion; respect reduced-motion preferences and never hide essential content.
@@ -42,7 +42,7 @@ Design default, hover, focus-visible, active, disabled, loading, success, error,
 
 ## Constraints
 
-- Do not finalize design tokens before concept approval.
+- Do not treat preliminary design-token values as final without explicit finalization.
 - Do not use unlicensed imagery or fabricated business content.
 - Design for performance, accessibility, responsive behavior, and content changes.
 - Keep the visual system implementable with the proposed stack and without unnecessary complexity.

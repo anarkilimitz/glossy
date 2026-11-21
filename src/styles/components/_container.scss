@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../abstracts/variables' as vars;
+
+.container {
+  width: min(calc(100% - (var(--page-padding) * 2)), var(--container-width));
+  margin-inline: auto;
+}
+
+@media (min-width: #{map.get(vars.$breakpoints, wide-desktop)}) {
+  .container { width: min(calc(100% - (var(--page-padding) * 2)), var(--container-width-wide)); }
+}

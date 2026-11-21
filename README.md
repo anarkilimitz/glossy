@@ -1,10 +1,10 @@
 # Glossy
 
-Glossy is a planned commercial automotive services website. The possible business scope includes maintenance and repair, body repair, professional car painting, and car rental. Business-specific details remain TBD unless explicitly approved.
+Glossy is a planned commercial automotive services website for Космоавто112 in Екатеринбург. The approved service scope includes body repair (including painting), mechanical repair, and car rental. Exact address, legal details, and personal-data processing remain TBD.
 
 ## Current status
 
-The project is at the documentation and Product Discovery planning stage. Application setup and implementation have not started. There is no configured React/Vite application, deployment infrastructure, or CI/CD pipeline.
+The project has a minimal React/TypeScript/Vite application foundation with React Router, SCSS, Material UI theme wiring, ESLint, TypeScript, and Vitest configured. Product content, full page sections, backend submission, deployment infrastructure, and CI/CD remain out of scope for this foundation stage.
 
 ## Proposed technology stack
 
@@ -22,6 +22,7 @@ React, TypeScript, Vite, React Router, SCSS, Material UI, React Hook Form, Zod, 
 - [Testing strategy](docs/testing/TESTING_STRATEGY.md)
 - [Security guidelines](docs/security/SECURITY.md)
 - [Deployment plan](docs/deployment/DEPLOYMENT.md)
+- [Implementation specification](docs/development/IMPLEMENTATION_SPEC.md)
 
 ## Planned development workflow
 
@@ -33,4 +34,4 @@ React, TypeScript, Vite, React Router, SCSS, Material UI, React Hook Form, Zod, 
 6. Run automated checks, accessibility and responsive QA, and stakeholder review.
 7. Configure previews, production hosting, and release operations after explicit approval.
 
-No application code, package manifest, test configuration, or deployment configuration has been created as part of the current planning stage.
+The current foundation intentionally contains only the application shell, base route, custom 404 route, shared container, preliminary SCSS token layer, and test setup. Full page sections, contact submission, backend, deployment, and CI/CD are not configured yet.

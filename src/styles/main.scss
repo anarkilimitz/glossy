@@ -1,0 +1,16 @@
+@use 'themes/tokens';
+@use 'abstracts/variables';
+@use 'base/reset';
+@use 'base/global';
+@use 'base/typography';
+@use 'utilities/utilities';
+@use 'components/container';
+@use 'components/ui-primitives';
+@use 'pages/landing-page';
+@use 'components/site-chrome';
+
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

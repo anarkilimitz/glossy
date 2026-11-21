@@ -1,0 +1,110 @@
+// All values are Proposed until the visual system is finalized in the design docs.
+$breakpoints: (
+  mobile: 40rem,
+  tablet: 48rem,
+  desktop: 64rem,
+  wide-desktop: 80rem,
+);
+
+:root {
+  --color-primary: #545454;
+  --color-primary-hover: #1f2937;
+  --color-primary-active: #111827;
+  --color-primary-soft: #f1f5f9;
+  --color-accent: #ffb300;
+  --color-accent-hover: #cc8f00;
+  --color-background: #f8fafc;
+  --color-background-secondary: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8fafc;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-focus: #2563eb;
+  --color-success: #15803d;
+  --color-error: #b91c1c;
+  --color-warning: #b45309;
+
+  --font-family-base: Manrope, "Segoe UI", Arial, sans-serif;
+  --font-size-display: 3.75rem;
+  --font-size-h1: 3.75rem;
+  --font-size-h2: 3rem;
+  --font-size-h3: 2.25rem;
+  --font-size-h4: 1.875rem;
+  --font-size-body-large: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-body-small: 0.875rem;
+  --font-size-caption: 0.75rem;
+  --font-size-button: 0.875rem;
+  --font-size-h1-mobile: 2.25rem;
+  --font-size-h2-mobile: 2rem;
+  --font-size-h3-mobile: 1.75rem;
+  --font-size-h4-mobile: 1.5rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-display: 1.133;
+  --line-height-heading: 1.2;
+  --line-height-body-large: 1.556;
+  --line-height-body: 1.5;
+  --line-height-body-small: 1.429;
+  --line-height-caption: 1.333;
+  --line-height-h1-mobile: 1.222;
+  --line-height-h2-mobile: 1.25;
+  --line-height-h3-mobile: 1.286;
+  --line-height-h4-mobile: 1.333;
+  --letter-spacing-normal: 0;
+  --letter-spacing-label: 0.04em;
+
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --container-width: 75rem;
+  --container-width-wide: 80rem;
+  --container-width-narrow: 44rem;
+  --page-padding: var(--space-4);
+  --section-spacing: var(--space-16);
+  --grid-gap: var(--space-6);
+  --border-width: 1px;
+  --border-color: var(--color-border);
+  --border-style: solid;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-md: 0 8px 24px rgb(15 23 42 / 0.1);
+  --shadow-lg: 0 20px 48px rgb(15 23 42 / 0.16);
+  --transition-fast: 120ms;
+  --transition-normal: 200ms;
+  --transition-slow: 320ms;
+  --easing: cubic-bezier(0.2, 0, 0, 1);
+  --breakpoint-mobile: 40rem;
+  --breakpoint-tablet: 48rem;
+  --breakpoint-desktop: 64rem;
+  --breakpoint-wide-desktop: 80rem;
+  --z-base: 0;
+  --z-header: 10;
+  --z-dropdown: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+}
+
+@media (min-width: 48rem) { :root { --page-padding: var(--space-6); } }
+@media (min-width: 64rem) { :root { --page-padding: var(--space-8); } }

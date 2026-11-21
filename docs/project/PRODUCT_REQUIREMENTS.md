@@ -38,15 +38,15 @@ The header/navigation is shared structural chrome, not one of the six content se
 
 ## 2. Services
 
-**Purpose:** Explain the four core service categories.
+**Purpose:** Explain the three approved service directions.
 
-**Content/UI:** Maintenance and repair, body repair, professional car painting, and car rental; each requires approved descriptions and optional imagery.
+**Content/UI:** Body repair, mechanical repair, and car rental. Painting is presented within body repair, with separate descriptions for element painting, local repair, body repair with painting, and welding work.
 
 **Interactions:** Cards may link to contact or future detail pages; interaction behavior must be consistent.
 
 **Responsive considerations:** Cards reflow without awkward truncation or excessive scrolling.
 
-**Acceptance criteria:** All four services are visible and distinguishable; no unsupported claims are presented.
+**Acceptance criteria:** All three directions are visible and distinguishable; painting is not presented as a fourth direction; the body-repair subservices are understandable; no unsupported claims are presented.
 
 ## 3. About the Company / Advantages
 
@@ -95,6 +95,14 @@ The header/navigation is shared structural chrome, not one of the six content se
 **Responsive considerations:** Inputs are easy to use with touch and mobile keyboards; errors are visible near fields and summarized accessibly.
 
 **Acceptance criteria:** Required fields and formats are communicated; invalid submissions are blocked; submission states are unambiguous; backend validation remains authoritative.
+
+## Shared structural region: Footer
+
+**Purpose:** Close the page with concise navigation, confirmed contact paths, and links to legal documents when available.
+
+**Content/UI:** Космоавто112 name or approved logo, concise navigation, confirmed phones and email, city, and links to approved legal documents. Exact address, legal details, and personal-data processing content remain TBD.
+
+**Acceptance criteria:** Footer is present on the landing page and applicable routes; confirmed contact links are usable; no unconfirmed address or legal claim is shown; legal links appear only when approved documents exist; the footer remains compact and accessible on mobile.
 
 ### Preliminary contact form contract (proposed)
 

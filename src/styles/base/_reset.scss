@@ -1,0 +1,13 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html { min-width: 320px; scroll-behavior: smooth; }
+
+body { margin: 0; min-width: 320px; }
+
+button, input, textarea, select { font: inherit; }
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+button { border: 0; cursor: pointer; }

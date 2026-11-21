@@ -2,11 +2,11 @@
 
 ## Context and Workflow
 
-Glossy is a planned commercial automotive services website covering maintenance and repair, body repair, professional car painting, and car rental. Documentation comes first. Inspect existing files before editing, follow the requested scope, and keep unknown business details as TBD or explicit assumptions.
+Glossy is a planned commercial automotive services website covering body repair, mechanical repair, and car rental. Documentation comes first. Inspect existing files before editing, follow the requested scope, and keep unknown business details as TBD or explicit assumptions.
 
 ## Technology Status
 
-React, TypeScript, Vite, React Router, SCSS, Material UI, React Hook Form, Zod, Jest, React Testing Library, Playwright, ESLint, Prettier, GitHub Actions, and Vercel are proposed, not yet configured. Do not create application code or install dependencies unless the task explicitly authorizes it.
+React, TypeScript, Vite, React Router, SCSS, Material UI, React Hook Form, Zod, Vitest, React Testing Library, Playwright, ESLint, Prettier, GitHub Actions, and Vercel are proposed, not yet configured. Do not create application code or install dependencies unless the task explicitly authorizes it.
 
 ## Coding and Quality Rules
 
