@@ -39,7 +39,7 @@ export function Header() {
           </nav>
           <div className="site-header__actions">
             <a className="site-header__phone" href={`tel:${siteConfig.phones[0].replace(/[^+\d]/g, '')}`}>{siteConfig.phones[0]}</a>
-            <Button className="site-header__cta" size="small" onClick={() => { window.location.hash = 'contact'; }}>Записаться на ремонт</Button>
+            <Button className="site-header__cta" size="small" onClick={() => { window.location.hash = 'contacts'; }}>Записаться на ремонт</Button>
             <IconButton
               ref={menuButtonRef}
               className="site-header__menu-button"

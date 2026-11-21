@@ -10,7 +10,7 @@ export const siteConfig = {
     { label: 'О компании', href: '/#about' },
     { label: 'Наши работы', href: '/#portfolio' },
     { label: 'Автопрокат', href: '/#rental' },
-    { label: 'Контакты', href: '/#contact' },
+    { label: 'Контакты', href: '/#contacts' },
   ],
   serviceDirections: ['Кузовной ремонт', 'Механический ремонт', 'Автопрокат'],
 } as const;

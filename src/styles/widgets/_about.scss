@@ -1,0 +1,160 @@
+.about {
+  overflow: hidden;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.about__content {
+  max-inline-size: 38rem;
+}
+
+.about__eyebrow {
+  margin-block-end: var(--space-5);
+  color: var(--color-accent-hover);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.about__title {
+  max-inline-size: 12ch;
+  margin-block-end: var(--space-6);
+  letter-spacing: -0.035em;
+}
+
+.about__lead {
+  margin-block-end: var(--space-5);
+  color: var(--color-text-primary);
+}
+
+.about__description {
+  max-inline-size: 35rem;
+  color: var(--color-text-secondary);
+}
+
+.about__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-8);
+  max-inline-size: 25rem;
+  margin: var(--space-10) 0 0;
+  padding-block-start: var(--space-5);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.about__fact dt {
+  margin-block-end: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.about__fact dd {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.about__visual {
+  min-block-size: clamp(23rem, 45vw, 34rem);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(145deg, transparent 0 42%, rgb(255 179 0 / 0.14) 42% 63%, transparent 63%),
+    var(--color-primary-soft);
+  animation: about-visual-enter var(--transition-slow) var(--easing) both;
+}
+
+.about__visual-frame {
+  position: relative;
+  block-size: 100%;
+  min-block-size: 20rem;
+  overflow: hidden;
+  border: var(--border-width) solid rgb(84 84 84 / 0.24);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.about__visual-mark {
+  position: absolute;
+  inset-block-start: 7%;
+  inset-inline-end: 5%;
+  color: var(--color-primary-soft);
+  font-size: clamp(7rem, 17vw, 13rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+}
+
+.about__visual-caption {
+  position: absolute;
+  inset-block-start: var(--space-8);
+  inset-inline-start: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.about__visual-line {
+  position: absolute;
+  block-size: 1px;
+  inline-size: 65%;
+  background: var(--color-accent);
+}
+
+.about__visual-line--top { inset-block-start: 34%; inset-inline-start: 0; }
+.about__visual-line--bottom { inset-block-end: 21%; inset-inline-end: 0; opacity: 0.35; }
+
+.about__directions {
+  position: absolute;
+  inset-inline: var(--space-8);
+  inset-block-end: var(--space-8);
+  display: grid;
+  gap: var(--space-4);
+  max-inline-size: 19rem;
+}
+
+.about__direction {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--space-3);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-semibold);
+}
+
+.about__direction-index {
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-bold);
+}
+
+@keyframes about-visual-enter {
+  from { opacity: 0; transform: translateX(var(--space-6)); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 63.999rem) {
+  .about__layout { gap: var(--space-10); }
+}
+
+@media (max-width: 47.999rem) {
+  .about__layout { grid-template-columns: 1fr; gap: var(--space-10); }
+  .about__title { max-inline-size: 14ch; }
+  .about__visual { min-block-size: 21rem; padding: var(--space-4); }
+  .about__visual-frame { min-block-size: 18rem; }
+  .about__visual-caption { inset-inline-start: var(--space-6); }
+  .about__directions { inset-inline: var(--space-6); inset-block-end: var(--space-6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__visual { animation: none; }
+}
