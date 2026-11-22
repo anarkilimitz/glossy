@@ -819,3 +819,7 @@ SCSS-переменные использовать для compile-time знач�
 ---
 
 **Главный принцип Glossy:** разработать не шаблонный сайт автосервиса, а цельный коммерческий продукт с продуманной визуальной системой, качественной типографикой, аккуратной анимацией, удобной навигацией и достоверным содержанием.
+
+## Stage 10 — FleetCarousel implementation
+
+`src/widgets/fleet-carousel/FleetCarousel.tsx` is a focused React component rendered after the existing rental block and before `Footer` through `LandingPage`. Vehicle data lives in `src/shared/config/fleet-carousel.ts`; the component uses CSS 3D transforms with explicit active, adjacent, and far positions. Local state owns the active index and pause state, navigation wraps modulo the four-vehicle list, and the 4.5-second timer is cleared on unmount. Hover, focus, keyboard arrows, and manual controls pause rotation; reduced-motion preference prevents automatic rotation. Styles are isolated in `src/styles/widgets/_fleet-carousel.scss` and imported by `main.scss`. Missing images preserve the media aspect ratio and render an accessible fallback.

@@ -136,3 +136,7 @@ Spam protection, rate limiting, personal-data handling, logging, retention, and 
 - Custom 404 page with a useful recovery link.
 - Responsive navigation, semantic SEO metadata, and accessible focus states.
 - Analytics and third-party services only after approval and privacy review.
+
+## Stage 10 — Fleet 3D carousel
+
+The landing page includes a dedicated fleet visual section immediately before the footer. It presents four confirmed rental vehicles — Chery Arrizo 8, Haval F7, Hyundai Solaris, and Volkswagen Polo — with the active vehicle in focus, secondary vehicles creating perspective, model name, and confirmed daily rental price. The section supports responsive layouts, keyboard-accessible previous/next controls, cyclic manual navigation, automatic rotation, hover/focus pausing, image fallbacks, and reduced-motion preferences.
