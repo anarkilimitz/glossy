@@ -46,3 +46,7 @@ Design default, hover, focus-visible, active, disabled, loading, success, error,
 - Do not use unlicensed imagery or fabricated business content.
 - Design for performance, accessibility, responsive behavior, and content changes.
 - Keep the visual system implementable with the proposed stack and without unnecessary complexity.
+
+## Stage 10 — Fleet carousel direction
+
+The approved Light Minimal v1 direction is extended with a large 3D composition of real vehicle photographs. The focused vehicle dominates the composition while side vehicles follow a shallow arc created with perspective, scale, and restrained rotation. The section uses a light surface, CSS pseudo-element circles/accents for depth, and no background imagery or theatrical effects. Vehicle photography remains content supplied and approved by the project owner.

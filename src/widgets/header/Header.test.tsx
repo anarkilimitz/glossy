@@ -10,6 +10,12 @@ describe('Header', () => {
   it('renders primary navigation, phone and CTA', () => {
     renderHeader();
     expect(screen.getByRole('navigation', { name: 'Основная навигация' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Главная' })).toHaveAttribute('href', '/#home');
+    expect(screen.getByRole('link', { name: 'Услуги' })).toHaveAttribute('href', '/#services');
+    expect(screen.getByRole('link', { name: 'О компании' })).toHaveAttribute('href', '/#about');
+    expect(screen.getByRole('link', { name: 'Наши работы' })).toHaveAttribute('href', '/#portfolio');
+    expect(screen.getByRole('link', { name: 'Автопрокат' })).toHaveAttribute('href', '/#rental');
+    expect(screen.getByRole('link', { name: 'Контакты' })).toHaveAttribute('href', '/#contacts');
     expect(screen.getByRole('link', { name: '+7 (965) 50 58 651' })).toHaveAttribute('href', 'tel:+79655058651');
     expect(screen.getByRole('button', { name: 'Записаться на ремонт' })).toBeInTheDocument();
   });

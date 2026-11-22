@@ -1,0 +1,216 @@
+.fleet {
+  overflow: hidden;
+}
+
+.fleet__intro,
+.fleet__categories,
+.fleet__vehicles {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.fleet__intro {
+  max-inline-size: 42rem;
+  margin-block-end: var(--space-12);
+}
+
+.fleet__eyebrow {
+  color: var(--color-accent-hover);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.fleet__title,
+.fleet__subheading,
+.fleet__buyout-title {
+  margin: 0;
+  letter-spacing: -0.035em;
+}
+
+.fleet__description,
+.fleet-category__description,
+.fleet__buyout-description {
+  color: var(--color-text-secondary);
+}
+
+.fleet__categories,
+.fleet__vehicles {
+  margin-block-start: var(--space-12);
+}
+
+.fleet__subheading {
+  font-size: var(--font-size-h3);
+}
+
+.fleet__category-grid,
+.fleet__vehicle-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.fleet__category-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fleet__vehicle-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fleet-category,
+.fleet-card {
+  min-inline-size: 0;
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.fleet-category {
+  display: grid;
+  gap: var(--space-4);
+  min-block-size: 14rem;
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+}
+
+.fleet-category:nth-child(2n) {
+  background: var(--color-background);
+}
+
+.fleet-category__title,
+.fleet-card__title {
+  margin: 0;
+}
+
+.fleet-category__title {
+  font-size: var(--font-size-h4);
+}
+
+.fleet-category__price,
+.fleet-card__price {
+  margin: auto 0 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-semibold);
+}
+
+.fleet-category__price span {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+}
+
+.fleet-category__price small,
+.fleet-card__price small {
+  margin-inline-start: var(--space-1);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-regular);
+}
+
+.fleet-card {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-normal) var(--easing), box-shadow var(--transition-normal) var(--easing);
+}
+
+.fleet-card:hover,
+.fleet-card:focus-within {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.fleet-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-background-secondary);
+}
+
+.fleet-card__image,
+.fleet-card__placeholder {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.fleet-card__image {
+  object-fit: cover;
+}
+
+.fleet-card__placeholder {
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body-small);
+  text-align: center;
+}
+
+.fleet-card__content {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.fleet-card__title {
+  overflow: hidden;
+  font-size: var(--font-size-body-large);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fleet__buyout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin-block-start: var(--space-12);
+  padding: var(--space-8);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.fleet__buyout-description {
+  margin-block-start: var(--space-3);
+}
+
+@media (max-width: 63.999rem) {
+
+  .fleet__category-grid,
+  .fleet__vehicle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .fleet__intro {
+    margin-block-end: var(--space-8);
+  }
+
+  .fleet__categories,
+  .fleet__vehicles {
+    margin-block-start: var(--space-8);
+  }
+
+  .fleet__category-grid,
+  .fleet__vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-category {
+    min-block-size: auto;
+  }
+
+  .fleet__buyout {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-block-start: var(--space-8);
+    padding: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fleet-card {
+    transition: none;
+  }
+}

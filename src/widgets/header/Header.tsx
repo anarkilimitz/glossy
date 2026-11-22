@@ -35,7 +35,7 @@ export function Header() {
             {siteConfig.companyName}
           </Link>
           <nav className="site-header__desktop-nav" aria-label="Основная навигация">
-            {siteConfig.navigation.map((item) => <Link key={item.href} to={item.href}>{item.label}</Link>)}
+            {siteConfig.navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
           </nav>
           <div className="site-header__actions">
             <a className="site-header__phone" href={`tel:${siteConfig.phones[0].replace(/[^+\d]/g, '')}`}>{siteConfig.phones[0]}</a>
@@ -53,7 +53,7 @@ export function Header() {
           </div>
         </div>
         <nav id="mobile-navigation" className={`site-header__mobile-nav${isMenuOpen ? ' site-header__mobile-nav--open' : ''}`} aria-label="Мобильная навигация" hidden={!isMenuOpen}>
-          {siteConfig.navigation.map((item, index) => <Link key={item.href} ref={index === 0 ? firstLinkRef : undefined} to={item.href} onClick={closeMenu}>{item.label}</Link>)}
+          {siteConfig.navigation.map((item, index) => <a key={item.href} ref={index === 0 ? firstLinkRef : undefined} href={item.href} onClick={closeMenu}>{item.label}</a>)}
           <a href={`tel:${siteConfig.phones[0].replace(/[^+\d]/g, '')}`} onClick={closeMenu}>{siteConfig.phones[0]}</a>
         </nav>
       </Container>
