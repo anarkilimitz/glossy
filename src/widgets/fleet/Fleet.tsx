@@ -123,7 +123,13 @@ export function Fleet() {
 									{formatPrice(vehicle.pricePerDay)}
 									<small>/сутки</small>
 								</p>
-								<Button as="a" href="#contacts" variant="outline" size="medium">
+								<Button
+									as="a"
+									href="#contacts"
+									variant="outline"
+									size="medium"
+									className="fleet-card__action"
+								>
 									Уточнить по аренде
 								</Button>
 							</div>
@@ -146,7 +152,7 @@ export function Fleet() {
 						отдельно.
 					</Typography>
 				</div>
-				<Button as="a" href="#contacts" variant="primary" size="medium">
+				<Button as="a" href="#contacts" variant="primary" size="small">
 					Обсудить выкуп
 				</Button>
 			</div>

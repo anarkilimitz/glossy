@@ -7,5 +7,7 @@
 }
 
 @media (min-width: #{map.get(vars.$breakpoints, wide-desktop)}) {
-  .container { width: min(calc(100% - (var(--page-padding) * 2)), var(--container-width-wide)); }
+  .container {
+    width: min(calc(100% - (var(--page-padding) * 2)), var(--container-width-wide));
+  }
 }
