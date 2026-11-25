@@ -29,7 +29,7 @@ References must be documented before borrowing recognizable patterns; no competi
 ## Direction
 
 - **Photography:** Real, high-resolution, permissioned vehicle and workshop imagery; emphasize material, craft, process, and controlled lighting.
-- **Typography:** Strong display hierarchy paired with highly legible body text; Manrope is the preliminary choice, with final source, license, and fallback TBD.
+- **Typography:** Strong display hierarchy paired with highly legible body text; Medeo Sans is the project font, loaded locally from `medeo-font@1.1.0` as a variable WOFF2 with Latin/Cyrillic coverage under OFL 1.1. Medeo Sans Display is not loaded separately; the Sans variable font provides optical-size behavior for large headings.
 - **Color:** Restrained premium palette with a clear surface, text, accent, and status system; exact values TBD.
 - **Layout:** Intentional whitespace, clear rhythm, asymmetry only when it improves hierarchy, and a consistent content container.
 - **Animation:** Subtle entrance, hover, and transition motion; respect reduced-motion preferences and never hide essential content.

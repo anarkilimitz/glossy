@@ -33,7 +33,7 @@ export const portfolioItems: readonly PortfolioItem[] = [
 	},
 	{
 		id: 'repair-04',
-		title: 'Комплексное восстановление кузова',
+		title: 'Восстановление кузова',
 		description:
 			'Последовательный ремонт, окраска и полировка отдельных кузовных деталей.',
 		beforeImage: '/images/portfolio/repair-04/before/Changan-broken.jpg',
